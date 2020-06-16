@@ -68,7 +68,7 @@ class InterfaceController: WKInterfaceController {
             //append new note to existing array
             self.notes.append(result)
             
-            // Key Archiver for not
+            // Key Archiver for not updated deprecated method 
 //            NSKeyedArchiver.archiveRootObject(self.notes, toFile: self.savePath) // Depricated
 //            print(self.savePath)
             do {
