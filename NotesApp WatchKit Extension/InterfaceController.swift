@@ -18,6 +18,10 @@ class InterfaceController: WKInterfaceController {
     
     var notes = [String]()
     
+    //saved path for document directory with notes label in path
+    var savePath = InterfaceController.getDocumentsDirectory().appendingPathComponent("notes").path
+    
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
@@ -69,4 +73,15 @@ class InterfaceController: WKInterfaceController {
     override func contextForSegue(withIdentifier segueIdentifier: String, in table: WKInterfaceTable, rowIndex: Int) -> Any? {
         return ["index" : String(rowIndex + 1), "note" : notes[rowIndex]]
     }
+    
+    // Request Document directory
+    static func getDocumentsDirectory() -> URL {
+        let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return path[0]
+        
+    }
+    
+    
+    
+    
 }
