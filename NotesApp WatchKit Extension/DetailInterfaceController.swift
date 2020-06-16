@@ -12,6 +12,10 @@ import Foundation
 
 class DetailInterfaceController: WKInterfaceController {
 
+    //MARK: IBOUtlet
+    @IBOutlet weak var noteDetailsLabel: WKInterfaceLabel!
+    
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         

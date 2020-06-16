@@ -18,6 +18,9 @@
                                         <items>
                                             <label alignment="left" verticalAlignment="center" text="Label" id="QJT-MC-kBh"/>
                                         </items>
+                                        <connections>
+                                            <segue destination="Hda-6v-yfY" kind="push" id="jvZ-Al-Yvt"/>
+                                        </connections>
                                     </group>
                                     <connections>
                                         <outlet property="tableNotesTextLbl" destination="QJT-MC-kBh" id="NoO-jo-NYE"/>
@@ -47,9 +50,12 @@
                     <items>
                         <label alignment="left" alpha="0.94999999999999996" text="Label" id="TWY-hQ-w26"/>
                     </items>
+                    <connections>
+                        <outlet property="noteDetailsLabel" destination="TWY-hQ-w26" id="C5r-Pe-6Nn"/>
+                    </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="351" y="75"/>
+            <point key="canvasLocation" x="387" y="73"/>
         </scene>
     </scenes>
 </document>
