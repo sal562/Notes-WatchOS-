@@ -19,7 +19,14 @@ class InterfaceController: WKInterfaceController {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        // Configure interface objects here.
+        //similar to viewdidload
+        notesTable.setNumberOfRows(15, withRowType: "tableRow") // tableRow is identifier
+        
+        for rowIndex in 0 ..< 10 {
+            guard let row = notesTable.rowController(at: rowIndex) as? tableNotesCell else { continue }
+            row.tableNotesTextLbl.setText("Hello, row \(rowIndex)")
+        }
+        
     }
     
     override func willActivate() {
