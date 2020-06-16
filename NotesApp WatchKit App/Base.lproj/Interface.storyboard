@@ -13,7 +13,7 @@
                     <items>
                         <table alignment="left" id="ddU-dv-Nmm">
                             <items>
-                                <tableRow identifier="tableRow" id="pCn-Z2-mCQ" customClass="tableNotesCell" customModule="NotesApp_WatchKit_App">
+                                <tableRow identifier="tableRow" id="pCn-Z2-mCQ" customClass="tableNotesCell" customModule="NotesApp_WatchKit_Extension">
                                     <group key="rootItem" width="1" alignment="left" id="fIj-IN-F0r">
                                         <items>
                                             <label alignment="left" verticalAlignment="center" text="Label" id="QJT-MC-kBh"/>
