@@ -13,16 +13,29 @@
                     <items>
                         <table alignment="left" id="ddU-dv-Nmm">
                             <items>
-                                <tableRow id="pCn-Z2-mCQ">
+                                <tableRow identifier="tableRow" id="pCn-Z2-mCQ" customClass="tableNotesCell" customModule="NotesApp_WatchKit_Extension">
                                     <group key="rootItem" width="1" alignment="left" id="fIj-IN-F0r">
                                         <items>
                                             <label alignment="left" verticalAlignment="center" text="Label" id="QJT-MC-kBh"/>
                                         </items>
                                     </group>
+                                    <connections>
+                                        <outlet property="tableNotesTextLbl" destination="QJT-MC-kBh" id="NoO-jo-NYE"/>
+                                    </connections>
                                 </tableRow>
                             </items>
                         </table>
+                        <button width="1" alignment="left" title="Add New Note" id="GRY-gV-eX9">
+                            <color key="backgroundColor" red="0.0076015526429999997" green="0.47532129290000003" blue="0.99726170300000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="font" type="system" pointSize="15"/>
+                            <connections>
+                                <action selector="addNewNoteBtnPressed" destination="AgC-eL-Hgc" id="UFp-e5-FAd"/>
+                            </connections>
+                        </button>
                     </items>
+                    <connections>
+                        <outlet property="notesTable" destination="ddU-dv-Nmm" id="mYn-jb-wKW"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="118" y="73"/>

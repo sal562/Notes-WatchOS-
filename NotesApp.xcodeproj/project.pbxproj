@@ -20,6 +20,7 @@
 		E054DA9C2498DD350096E8D5 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E054DA9B2498DD350096E8D5 /* InterfaceController.swift */; };
 		E054DA9E2498DD350096E8D5 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E054DA9D2498DD350096E8D5 /* ExtensionDelegate.swift */; };
 		E054DAA02498DD360096E8D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E054DA9F2498DD360096E8D5 /* Assets.xcassets */; };
+		E054DAB02498DE7E0096E8D5 /* tableNotesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E054DAAF2498DE7E0096E8D5 /* tableNotesCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		E054DA9D2498DD350096E8D5 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		E054DA9F2498DD360096E8D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E054DAA12498DD360096E8D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E054DAAF2498DE7E0096E8D5 /* tableNotesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableNotesCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 				E054DA9D2498DD350096E8D5 /* ExtensionDelegate.swift */,
 				E054DA9F2498DD360096E8D5 /* Assets.xcassets */,
 				E054DAA12498DD360096E8D5 /* Info.plist */,
+				E054DAAF2498DE7E0096E8D5 /* tableNotesCell.swift */,
 			);
 			path = "NotesApp WatchKit Extension";
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E054DA9E2498DD350096E8D5 /* ExtensionDelegate.swift in Sources */,
+				E054DAB02498DE7E0096E8D5 /* tableNotesCell.swift in Sources */,
 				E054DA9C2498DD350096E8D5 /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
