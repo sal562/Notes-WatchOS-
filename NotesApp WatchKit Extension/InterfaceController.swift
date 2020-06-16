@@ -7,7 +7,7 @@
 //
 
 import WatchKit
-import UIKit 
+import Foundation
 
 
 class InterfaceController: WKInterfaceController {
@@ -19,17 +19,27 @@ class InterfaceController: WKInterfaceController {
     var notes = [String]()
     
     //saved path for document directory with notes label in path
-    var savePath = InterfaceController.getDocumentsDirectory().appendingPathComponent("notes").path
+    var savePath = InterfaceController.getDocumentsDirectory().appendingPathComponent("notes")
     
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
+                
+        //Unarchive saved data and display array as string
+//        notes = NSKeyedUnarchiver.unarchiveObject(withFile: savePath) as? [String] ?? [String]() -- DEPRICATED
+        do { //updated for swift5
+            let data = try Data(contentsOf: savePath)
+            notes = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? [String] ?? [String]()
+            print(self.savePath)
+        } catch {
+            // do nothing; notes is already an empty array
+        }
         
         //similar to viewdidload
-        notesTable.setNumberOfRows(notes.count, withRowType: "tableRow") // tableRow is identifier
+              notesTable.setNumberOfRows(notes.count, withRowType: "tableRow") // tableRow is identifier
         
-        for rowIndex in 0 ..<  notes.count {
-          set(row: rowIndex, to: notes[rowIndex])
+        for rowIndex in 0 ..< notes.count {
+            set(row: rowIndex, to: notes[rowIndex])
         }
     }
     
@@ -38,15 +48,6 @@ class InterfaceController: WKInterfaceController {
         row.tableNotesTextLbl.setText(text)
     }
     
-    override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
-        super.willActivate()
-    }
-    
-    override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
-        super.didDeactivate()
-    }
     
     //MARK: IBActions
 
@@ -66,6 +67,17 @@ class InterfaceController: WKInterfaceController {
             
             //append new note to existing array
             self.notes.append(result)
+            
+            // Key Archiver for not
+//            NSKeyedArchiver.archiveRootObject(self.notes, toFile: self.savePath) // Depricated
+//            print(self.savePath)
+            do {
+                let data = try NSKeyedArchiver.archivedData(withRootObject: self.notes, requiringSecureCoding: false)
+                try data.write(to: self.savePath)
+                print(self.savePath)
+            } catch {
+                print("Failed to save data: \(error.localizedDescription).")
+            }
         }
     }
     
@@ -76,12 +88,9 @@ class InterfaceController: WKInterfaceController {
     
     // Request Document directory
     static func getDocumentsDirectory() -> URL {
-        let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        return path[0]
-        
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
     }
     
-    
-    
-    
+
 }

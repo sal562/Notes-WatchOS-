@@ -21,7 +21,7 @@ class DetailInterfaceController: WKInterfaceController {
         
         // recieve data from mainVC
         if let contextDictionary = context as? [String : String] {
-            noteDetailsLabel.setText(contextDictionary["note"] ?? "1")
+            noteDetailsLabel.setText(contextDictionary["note"] ?? "")
             let index = contextDictionary["index"] ?? "1"
             setTitle("Note \(index)")
         }
