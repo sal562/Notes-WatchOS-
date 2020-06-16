@@ -63,6 +63,10 @@ class InterfaceController: WKInterfaceController {
             //append new note to existing array
             self.notes.append(result)
         }
-        
+    }
+    
+    // similar to prepare for segue - pass data to detailview - send data
+    override func contextForSegue(withIdentifier segueIdentifier: String, in table: WKInterfaceTable, rowIndex: Int) -> Any? {
+        return ["index" : String(rowIndex + 1), "note" : notes[rowIndex]]
     }
 }

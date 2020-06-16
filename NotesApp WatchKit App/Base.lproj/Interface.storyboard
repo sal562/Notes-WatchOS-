@@ -48,7 +48,7 @@
             <objects>
                 <controller id="Hda-6v-yfY" customClass="DetailInterfaceController" customModule="NotesApp_WatchKit_Extension">
                     <items>
-                        <label alignment="left" alpha="0.94999999999999996" text="Label" id="TWY-hQ-w26"/>
+                        <label alignment="left" text="Label" numberOfLines="0" id="TWY-hQ-w26"/>
                     </items>
                     <connections>
                         <outlet property="noteDetailsLabel" destination="TWY-hQ-w26" id="C5r-Pe-6Nn"/>
